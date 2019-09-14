@@ -1,0 +1,157 @@
+        <div class="row">
+            <div class="col-md-12">
+                <h2>{{emp.firstName}} {{emp.lastName}} - Employee {{emp.employeeNum}}</h2>
+                <br />
+                <form id="employee-form" method="post" action="/employee/update" name="employeeForm">
+                    <input id="employeeNum" name="employeeNum" type="text" value="{{emp.employeeNum}}" hidden readonly/>
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName">First Name:</label>
+                                    <input class="form-control" id="firstName" name="firstName" type="text" value="{{emp.firstName}}" autocomplete="off"/>
+                                    <div id="in-01" class="feedback" hidden>
+                                        Type in a valid given name
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name">Last Name:</label>
+                                    <input class="form-control" id="lastName" name="lastName" type="text" value="{{emp.lastName}}"  autocomplete="off"/>
+                                    <div id="in-02" class="feedback" hidden>
+                                        Type in a valid family name
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" id="email" name="email" type="email" value="{{emp.email}}" autocomplete="off"/>
+                                    <div id="in-03" class="feedback" hidden>
+                                        Type in a valid email address
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="SSN">Social Security Number:</label>
+                                    <input class="form-control" id="SSN" name="SSN" type="text" value="{{emp.SSN}}" autocomplete="off"/>
+                                    <div id="in-04" class="feedback" hidden>
+                                        Choose a valid SSN "999-99-9999"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Marital Status:</label><br />
+                                    <label  class="checkbox-inline">
+                                        <input type="radio" id="maritalStatus" name="maritalStatus" value="single" {{#equal emp.maritalStatus "single"}}checked{{/equal}}/> Single
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="maritalStatus" name="maritalStatus" value="married" {{#equal emp.maritalStatus "married"}}checked{{/equal}}/> Married
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="addressStreet">Address (Street):</label>
+                                    <input class="form-control" id="addressStreet" name="addressStreet" type="text" value="{{emp.addressStreet}}" autocomplete="off"/>
+                                    <div id="in-05" class="feedback" hidden>
+                                        Type in a valid streen address
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="addressCity">Address (City):</label>
+                                <input class="form-control" id="addressCity" name="addressCity" type="text" value="{{emp.addressCity}}" autocomplete="off"/>
+                                <div id="in-06" class="feedback" hidden>
+                                    Type in a valid city
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="addressState">Address (State):</label>
+                                    <input class="form-control" id="addressState" name="addressState" type="text" value="{{emp.addressState}}" autocomplete="off"/>
+                                    <div id="in-07" class="feedback" hidden>
+                                        Type in a valid state
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="addressPostal">Address (Zip Code):</label>
+                                    <input class="form-control" id="addressPostal" name="addressPostal" type="text" value="{{emp.addressPostal}}" autocomplete="off"/>
+                                    <div id="in-08" class="feedback" hidden>
+                                        Type in a valid postal code
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Company Information</legend>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="manager-label" for="isManager">Manager:</label>
+                                    <input class="manager-checkbox" type="checkbox" id="mngCheck" name="isManager" {{#unless emp.isManager}}checked{{/unless}}/>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="employeeManagerNum">Employee's Manager Number:</label>
+                                    <input class="form-control" id="employeeManagerNum" name="employeeManagerNum" type="number" {{#unless emp.isManager}}value="{{emp.employeeManagerNum}}"{{/unless}} {{#if emp.isManager}}disabled{{/if}} />
+                                    <div id="in-09" class="feedback" hidden>
+                                        Invalid number
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group status">
+                                    <label>Status:</label>
+                                    <label  class="checkbox">
+                                        <input type="radio" id="statusFT" name="status" value="Full Time" {{#equal emp.status "Full Time"}}checked{{/equal}}/> Full Time
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="radio" id="statusFT" name="status" value="Part Time" {{#equal emp.status "Part Time"}}checked{{/equal}}/> Part Time
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                        <select class="form-control" name="department" id="department">
+                                            <option value="1" {{#equal emp.department 1}}selected{{/equal}}>Creative Services</option>
+                                            <option value="2" {{#equal emp.department 2}}selected{{/equal}}>Product Development</option>
+                                            <option value="3" {{#equal emp.department 3}}selected{{/equal}}>Marketing</option>
+                                            <option value="4" {{#equal emp.department 4}}selected{{/equal}}>Strategic Planning</option>
+                                            <option value="5" {{#equal emp.department 5}}selected{{/equal}}>Accounting</option>
+                                            <option value="6" {{#equal emp.department 6}}selected{{/equal}}>Human Resources</option>
+                                            <option value="7" {{#equal emp.department 7}}selected{{/equal}}>Quality Analysis</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="hireDate">Hire Date</label>
+                                    <input class="form-control" id="hireDate" name="hireDate" type="text" value="{{emp.hireDate}}" disabled autocomplete="off"/>
+                                    <div id="in-10" class="feedback" hidden>
+                                        Choose a valid date
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <a href="/employees" class="btn btn-primary">Cancel</a>
+                    <input id="update-form" type="submit" class="btn btn-success pull-right" value="Update Employee" /><br /><br /><br />
+                </form>
+                <hr />
+            </div>
+        </div>
+        <script src="/scripts/employeeForm.js"></script>

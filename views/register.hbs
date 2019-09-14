@@ -1,0 +1,47 @@
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>User Registration</h2>
+                <br />
+                <form method="post" action="/register">
+                    <fieldset>
+                        <legend>User Information</legend>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="userName">User Name:</label>
+                                    <input class="form-control" id="userName" name="userName" type="text" autocomplete="off" placeholder="User name" required/>
+                                    <div id="in-01" class="feedback" hidden>
+                                        Type in a valid user name
+                                    </div>
+                                    <label for="password01">Password:</label>
+                                    <input class="form-control" id="password01" name="password01" type="password" autocomplete="off" placeholder="Password" required/>
+                                    <div id="in-02" class="feedback" hidden>
+                                        Type in a valid password
+                                    </div>
+                                    <label for="password02">Repeat Password:</label>
+                                    <input class="form-control" id="password02" name="password02" type="password" autocomplete="off" placeholder="Confirm Password" required/>
+                                    <div id="in-03" class="feedback" hidden>
+                                        Password must match
+                                    </div>
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" id="email" name="email" type="email" autocomplete="off" placeholder="email" required/>
+                                    <div id="in-04" class="feedback" hidden>
+                                        Type in a valid email address
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr />
+                    <a href="/" class="btn btn-primary">Cancel</a>
+                    <input id="submit-form" type="submit" class="btn btn-success pull-right" value="Register" /><br /><br /><br />
+                </form>
+            </div>
+            {{#unless error.ok}}
+                <div class="col-md-12">
+                    <strong>{{error.msg}}</strong>
+                </div>
+            {{/unless}}
+        </div>
+        <script src="/scripts/registerForm.js"></script>

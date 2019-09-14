@@ -1,0 +1,122 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+body, legend {
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+h2 + a.btn.btn-success {
+    margin-top: 20px;
+}
+input + input#submit-form {
+    margin-right: 10px;
+}
+strong {
+    color: red;
+}
+ /* add image */
+ input[type="file"] {
+     padding: 0;
+ }
+ input[type="date"].form-control {
+     line-height: normal;
+ }
+ /* form */
+ input[type="checkbox"] {
+     margin: 32px 35px 0 20px;
+ }
+ table {
+     background-color: white;
+     color: rgb(41, 41, 41);
+ }
+ .table-responsive {
+     border: none;
+ }
+ .manager-label {
+    margin-top: 30px;
+ }
+ .status {
+     padding-left: 30px;
+ }
+ .feedback {
+     color: rgb(230, 94, 0);
+ }
+ #employeeManagerNum:disabled {
+    background-color: lightgray;
+ }
+/* navbar */
+.material-icons {
+    padding-top: 8px;
+    font-size: 1.1em;
+}
+.navbar-default {
+    background-color: rgb(230, 94, 0);
+    border-color: rgb(41, 41, 41);
+}
+
+.navbar-nav > li > a.btn {
+    padding: 5px;
+    margin: 4px;
+}
+/* Title */
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: white;
+}
+/* Link */
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: rgb(41, 41, 41);
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: rgb(41, 41, 41);
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: white;
+    background-color: rgb(41, 41, 41);
+}
+/* Caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: rgb(41, 41, 41);
+    border-bottom-color: rgb(41, 41, 41);
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: white;
+    border-bottom-color: white;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: white;
+    border-bottom-color: white;
+}
+
+/* Side button */
+.navbar-default .navbar-toggle {
+    border-color: rgb(41, 41, 41);
+    background-color: rgb(41, 41, 41);
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: rgb(41, 41, 41);
+}
+/* Don't change */
+.navbar-default .navbar-collapse, 
+.navbar-default .navbar-form {
+    border-color: rgb(41, 41, 41);
+}

@@ -1,0 +1,156 @@
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Add Employee</h2>
+                <br />
+                <form id="employee-form" method="post" action="/employees/add" name="employeeForm">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="firstName">First Name:</label>
+                                    <input class="form-control" id="firstName" name="firstName" type="text" autocomplete="off"/>
+                                    <div id="in-01" class="feedback" hidden>
+                                        Type in a valid given name
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="last_name">Last Name:</label>
+                                    <input class="form-control" id="lastName" name="lastName" type="text"  autocomplete="off"/>
+                                    <div id="in-02" class="feedback" hidden>
+                                        Type in a valid family name
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" id="email" name="email" type="email" autocomplete="off"/>
+                                    <div id="in-03" class="feedback" hidden>
+                                        Type in a valid email address
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="SSN">Social Security Number:</label>
+                                    <input class="form-control" id="SSN" name="SSN" type="text"  autocomplete="off"/>
+                                    <div id="in-04" class="feedback" hidden>
+                                        Choose a valid SSN "999-99-9999"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Marital Status:</label><br />
+                                    <label  class="checkbox-inline">
+                                        <input type="radio" id="maritalStatus" name="maritalStatus" value="single" checked/> Single
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="maritalStatus" name="maritalStatus" value="Married" /> Married
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="addressStreet">Address (Street):</label>
+                                    <input class="form-control" id="addressStreet" name="addressStreet" type="text"  autocomplete="off"/>
+                                    <div id="in-05" class="feedback" hidden>
+                                        Type in a valid streen address
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="addressCity">Address (City):</label>
+                                <input class="form-control" id="addressCity" name="addressCity" type="text"  autocomplete="off"/>
+                                <div id="in-06" class="feedback" hidden>
+                                    Type in a valid city
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="addressState">Address (State):</label>
+                                    <input class="form-control" id="addressState" name="addressState" type="text"  autocomplete="off"/>
+                                    <div id="in-07" class="feedback" hidden>
+                                        Type in a valid state
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="addressPostal">Address (Zip Code):</label>
+                                    <input class="form-control" id="addressPostal" name="addressPostal" type="text" autocomplete="off"/>
+                                    <div id="in-08" class="feedback" hidden>
+                                        Type in a valid postal code
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Company Information</legend>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label class="manager-label" for="isManager">Manager:</label>
+                                    <input class="manager-checkbox" type="checkbox" id="mngCheck" name="isManager" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="employeeManagerNum">Employee's Manager Number:</label>
+                                    <input class="form-control" id="employeeManagerNum" name="employeeManagerNum" type="number" disabled/>
+                                    <div id="in-09" class="feedback" hidden>
+                                        Invalid number
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group status">
+                                    <label>Status:</label>
+                                    <label  class="checkbox">
+                                        <input type="radio" id="statusFT" name="status" value="Full Time" checked/> Full Time
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="radio" id="statusFT" name="status" value="Part Time" /> Part Time
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                        <select class="form-control" name="department" id="department">
+                                            <option value="1">Creative Services</option>
+                                            <option value="2">Product Development</option>
+                                            <option value="3">Marketing</option>
+                                            <option value="4">Strategic Planning</option>
+                                            <option value="5">Accounting</option>
+                                            <option value="6">Human Resources</option>
+                                            <option value="7">Quality Analysis</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="hireDate">Hire Date</label>
+                                    <input class="form-control" id="hireDate" name="hireDate" type="date" autocomplete="off"/>
+                                    <div id="in-10" class="feedback" hidden>
+                                        Choose a valid date
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <hr />
+                <input id="update-form" type="button" class="btn btn-primary pull-right" value="Add Employee" /><br /><br /><br />
+            </div>
+        </div>
+        <script src="/scripts/employeeForm.js"></script>

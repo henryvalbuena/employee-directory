@@ -1,0 +1,37 @@
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>User Login</h2>
+                <br />
+                <form method="post" action="/login">
+                    <fieldset>
+                        <legend>User Information</legend>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="userName">User Name:</label>
+                                    <input class="form-control" id="userName" name="userName" type="text" autocomplete="off" placeholder="user name" required/>
+                                    <div id="in-01" class="feedback" hidden>
+                                        Type in a valid user name
+                                    </div>
+                                    <label for="password">Password:</label>
+                                    <input class="form-control" id="password" name="password" type="password" autocomplete="off" placeholder="password" required/>
+                                    <div id="in-02" class="feedback" hidden>
+                                        Type in a valid password
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr />
+                    <a href="/" class="btn btn-primary">Cancel</a>
+                    <input id="submit-form" type="submit" class="btn btn-success pull-right" value="Login" /><br /><br /><br />
+                </form>
+            </div>
+            {{#unless error.ok}}
+                <div class="col-md-12">
+                    <strong>{{error.msg}}</strong>
+                </div>
+            {{/unless}}
+        </div>
+        <script src="/scripts/loginForm.js"></script>

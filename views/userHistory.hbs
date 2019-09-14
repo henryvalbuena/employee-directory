@@ -1,0 +1,26 @@
+            <div class="row">
+                <h1>WEB322 - {{user.userName}} - {{user.email}}</h1>
+            </div>
+            <div class="row">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Login Date/Time</th>
+                            <th>Client Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each user.loginHistory}}
+                        <tr>
+                            <td>{{dateTime}}</td>
+                            <td>{{userAgent}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{#unless error.ok}}
+                <div class="col-md-12">
+                    <strong>{{error.msg}}</strong>
+                </div>
+                {{/unless}}
+            </div>

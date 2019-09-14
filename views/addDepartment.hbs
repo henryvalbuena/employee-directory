@@ -1,0 +1,26 @@
+
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Add Department</h2>
+                <br />
+                <form method="post" action="/departments/add">
+                    <fieldset>
+                        <legend>Department Information</legend>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="departmentName">Department Name:</label>
+                                    <input class="form-control" id="departmentName" name="departmentName" type="text" autocomplete="off"/>
+                                    <div id="in-01" class="feedback" hidden>
+                                        Type in a valid department name
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr />
+                    <input id="submit-form" type="submit" class="btn btn-primary pull-right" value="Add Department" /><br /><br /><br />
+                </form>
+            </div>
+        </div>
+        {{!-- <script src="/scripts/formValidation.js"></script> --}}
