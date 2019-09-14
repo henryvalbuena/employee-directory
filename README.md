@@ -13,6 +13,10 @@ This project started in college as a requirement for WEB322, later enhanced with
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+## Demo
+
+https://employee-directoy.herokuapp.com/
+
 ### Prerequisites
 
 Docker and a text editor.
