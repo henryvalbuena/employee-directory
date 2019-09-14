@@ -68,15 +68,6 @@ function ensureLogin(req, res, next) {
         res.redirect('/login');
 }
 
-// ***************** TESTS *****************
-
-app.get('/test', ensureLogin, (req, res) => {
-    res.json({
-        query: req.query,
-        user: res.locals.session.user
-    })
-});
-
 // ***************** ROUTES *****************
 // GET
 app.get('/login', (req, res) => {
